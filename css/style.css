@@ -1,0 +1,653 @@
+/* 🌼 Global font */
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    background-color: #fefae0;
+    color: #8f5f3d;
+    padding-top: 80px; /* Adjust this value based on the height of your navbar */
+}
+
+/* 🍃 Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #d4d6ad;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    position: fixed; /* Use fixed position for consistency */
+    top: 0;
+    left: 0; 
+    right: 0;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out; /* Add smooth transition for showing/hiding */
+}
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Caveat', cursive;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap : 2rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #6b793e;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 📞 Icons */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.icons a, .icons button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #c08769;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+.icons a img, .icons button img {
+    transition: transform 0.2s ease;
+    display: block;
+}
+
+.icons a img:hover, .icons button img:hover {
+    transform: scale(1.2);
+}
+
+/* 🖼️ Hero Image */
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    padding: 2rem;
+}
+
+.overlay-tagline {
+    font-size: 4rem;
+    color: #fffffe;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 1rem;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8),
+                 0px 0px 20px rgba(255, 255, 255, 0.5);
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🌠 Smoother, slower slide animations */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-150vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(150vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 🌈 Tagline span styling */
+.overlay-tagline span {
+    display: inline-block;
+    font-size: 4rem;
+    color: #fffffe;
+    font-family: 'Dancing Script', cursive;
+    text-shadow:
+        0px 0px 8px rgba(255, 255, 255, 0.8),
+        0px 0px 20px rgba(255, 255, 255, 0.5);
+    opacity: 0;
+}
+
+/* ⬅️ Whimsy from far left */
+.overlay-tagline .whimsy {
+    animation: slideInLeft 2s ease-out forwards;
+}
+
+/* ➡️ Function from far right */
+.overlay-tagline .function {
+    animation: slideInRight 2s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* ✨ meets fading in */
+.overlay-tagline .meets {
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 1.6s;
+}
+
+/* ✨ Bottom Name */
+.bottom-left-name {
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #8f5f3d;
+    font-family: 'Caveat', cursive;
+    z-index: 1000;
+}
+
+/* 🌼 Scroll Button */
+#scroll-button {
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    color: #3a3a3a;
+    background: linear-gradient(to right, #d6dbb2, #fefae0);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#scroll-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ✨ Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.fixed-name {
+    font-size: 3rem;
+    color: #8f5f3d;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    color: #f0af94;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #6b793e;
+    color: #fefae0;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.cta:hover {
+    transform: scale(1.25);
+}
+
+/* 📒 About page */
+.hero2 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Diary image */
+.diary-img {
+    position: absolute;
+    left: 20%;
+    top: 44%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    max-width: 45vw;
+    max-height: 75vh;
+    object-fit: contain;
+    z-index: 1;
+}
+
+/* Navya image */
+.navya-img {
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+    width: auto;
+    height: auto;
+    max-width: 25vw;
+    max-height: 60vh;
+    object-fit: contain;
+    z-index: 2;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+/* Projects Page Styles */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 100px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 10px auto 4px;
+}
+
+.project-card {
+    background-color: #f8dcc3;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.project-card:hover {
+    transform: scale(1.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-label {
+    padding: 15px;
+    text-align: left;
+}
+
+.project-label h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #8f5f3d;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+.project-label p {
+    margin: 0;
+    font-size: 14px;
+    color: #6b793e;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
+
+/* Fix overflow for projects page */
+body.projects-page {
+    overflow-y: auto;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .diary-img {
+        width: 60%;
+    }
+    .navya-img {
+        width: 35%;
+    }
+}
+
+@media (max-width: 900px) {
+    .diary-img {
+        width: 70%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .navya-img {
+        width: 40%;
+        right: 0;
+    }
+    .projects-container {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero2 {
+        height: auto;
+        padding-bottom: 500px;
+    }
+    .diary-img {
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        margin-top: 20px;
+    }
+    .navya -img {
+        position: relative;
+        width: 60%;
+        margin: 20px auto;
+        display: block;
+        right: auto;
+    }
+    .projects-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Projects Page Organization and Sections */
+.projects-page {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding-top: 0;
+}
+
+/* Keep navbar fixed at top */
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Caveat', cursive;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #6b793e;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 📞 Icons */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.icons a, .icons button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #c08769;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+.icons a img, .icons button img {
+    transition: transform 0.2s ease;
+    display: block;
+}
+
+.icons a img:hover, .icons button img:hover {
+    transform: scale(1.2);
+}
+
+.section-container {
+    min-height: 100vh;
+    padding: 20px 40px 60px;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+    color: #8f5f3d;
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #d4d6ad;
+    margin: 10px auto 0;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #f8dcc3;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-label {
+    padding: 20px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-label h3 {
+    margin: 0 0 12px;
+    font-size: 18px;
+    color: #8f5f3d;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+.project-label p {
+    margin: 0;
+    font-size: 14px;
+    color: #6b793e;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
+
+/* Navigation Arrows */
+.section-nav {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-arrow {
+    width:  50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #d4d6ad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    transform: scale(1.1);
+    background-color: #c08769;
+}
+
+.nav-arrow svg {
+    width: 24px;
+    height: 24px;
+    fill: #6b793e;
+    transition: fill 0.3s ease;
+}
+
+.nav-arrow:hover svg {
+    fill: #fefae0;
+}
+
+/* Section colors */
+#oop-section {
+    background-color: #fefae0;
+}
+
+#research-section {
+    background-color: #f8f4e3;
+}
+
+#misc-section {
+    background-color: #f3efdc;
+}
+
+#creative-section {
+    background-color: #eeead5;
+}
+
+/* Reveal button for passion project */
+.reveal-button-container {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#reveal-btn {
+    padding: 15px 30px;
+    background-color: #c08769;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#reveal-btn:hover {
+    transform: scale(1.05);
+    background-color: #a06a50;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-container {
+        padding: 20px 20px 40px;
+    }
+    
+    .section-nav {
+        left: 15px;
+    }
+    
+    .nav-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        padding-top: 20px;
+    }
+}
