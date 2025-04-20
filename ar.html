@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Astronaut in AR</title>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    model-viewer {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <model-viewer
+    src="assets/Astronaut.glb"
+    alt="3D Astronaut"
+    ar
+    ar-modes="scene-viewer webxr quick-look"
+    environment-image="neutral"
+    auto-rotate
+    camera-controls
+    ios-src="assets/Astronaut.glb">
+  </model-viewer>
+</body>
+</html>
